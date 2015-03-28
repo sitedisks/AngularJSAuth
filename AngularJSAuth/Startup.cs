@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 
-[assembly: OwinStartup(typeof())]
+[assembly: OwinStartup(typeof(AngularJSAuth.API.Startup))]
 namespace AngularJSAuth.API
 {
     public class Startup
