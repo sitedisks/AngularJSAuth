@@ -1,0 +1,14 @@
+C:\Git\AngularJSAuth\AngularJSAuth\bin\AngularJSAuth.dll.config
+C:\Git\AngularJSAuth\AngularJSAuth\bin\AngularJSAuth.dll
+C:\Git\AngularJSAuth\AngularJSAuth\bin\AngularJSAuth.pdb
+C:\Git\AngularJSAuth\AngularJSAuth\bin\Newtonsoft.Json.dll
+C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Net.Http.Formatting.dll
+C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Web.Http.dll
+C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Web.Http.WebHost.dll
+C:\Git\AngularJSAuth\AngularJSAuth\bin\Newtonsoft.Json.xml
+C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Net.Http.Formatting.xml
+C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Web.Http.xml
+C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Web.Http.WebHost.xml
+C:\Git\AngularJSAuth\AngularJSAuth\obj\Debug\AngularJSAuth.API.csprojResolveAssemblyReference.cache
+C:\Git\AngularJSAuth\AngularJSAuth\obj\Debug\AngularJSAuth.dll
+C:\Git\AngularJSAuth\AngularJSAuth\obj\Debug\AngularJSAuth.pdb
