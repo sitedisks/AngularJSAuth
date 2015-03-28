@@ -34,4 +34,3 @@ C:\Git\AngularJSAuth\AngularJSAuth\bin\Microsoft.Owin.Security.xml
 C:\Git\AngularJSAuth\AngularJSAuth\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Git\AngularJSAuth\AngularJSAuth\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Web.Http.Owin.xml
-C:\Git\AngularJSAuth\AngularJSAuth\obj\Debug\AngularJSAuth.API.csprojResolveAssemblyReference.cache
