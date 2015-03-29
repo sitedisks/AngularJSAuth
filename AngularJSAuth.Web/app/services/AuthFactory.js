@@ -6,7 +6,7 @@
     AuthFactory.$inject = ['$http', '$q', 'localStorageService'];
 
     function AuthFactory($http, $q, localStorageService) {
-        var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/';
+        var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/'; //host winhost
         var authServiceFactory = {};
 
         var _authentication = {

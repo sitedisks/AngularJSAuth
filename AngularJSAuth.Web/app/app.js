@@ -18,23 +18,28 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when("/login", {
-        controller: "loginController",
+        controller: "loginController as vm",
         templateUrl: "/app/views/login.html"
     });
 
     $routeProvider.when("/signup", {
-        controller: "signupController",
+        controller: "signupCtrl as vm",
         templateUrl: "/app/views/signup.html"
     });
 
     $routeProvider.when("/orders", {
-        controller: "ordersController",
+        controller: "ordersController vm",
         templateUrl: "/app/views/orders.html"
     });
 
     $routeProvider.otherwise({ redirectTo: "/home" });
 });
 
+
+app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorSvc');
+});
+
 app.run(['authService', function (authService) {
-    //authService.fillAuthData();
+    authService.fillAuthData();
 }]);

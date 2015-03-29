@@ -57,7 +57,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\controllers\homeCtrl.js" />
+    <Content Include="app\controllers\indexCtrl.js" />
+    <Content Include="app\controllers\loginCtrl.js" />
+    <Content Include="app\controllers\signupCtrl.js" />
     <Content Include="app\services\AuthFactory.js" />
+    <Content Include="app\services\authInterceptorSvc.js" />
+    <Content Include="app\services\ordersSvc.js" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\login.html" />
     <Content Include="app\views\orders.html" />
@@ -886,9 +892,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
