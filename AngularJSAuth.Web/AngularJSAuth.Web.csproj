@@ -60,6 +60,7 @@
     <Content Include="app\controllers\homeCtrl.js" />
     <Content Include="app\controllers\indexCtrl.js" />
     <Content Include="app\controllers\loginCtrl.js" />
+    <Content Include="app\controllers\ordersCtrl.js" />
     <Content Include="app\controllers\signupCtrl.js" />
     <Content Include="app\services\AuthFactory.js" />
     <Content Include="app\services\authInterceptorSvc.js" />
@@ -68,8 +69,10 @@
     <Content Include="app\views\login.html" />
     <Content Include="app\views\orders.html" />
     <Content Include="app\views\signup.html" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="content\loading-bar.css" />
     <Content Include="content\loading-bar.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="packages.config" />
     <Content Include="scripts\loading-bar.js" />
     <Content Include="scripts\loading-bar.min.js" />
@@ -87,6 +90,10 @@
     <Content Include="scripts\angular-aria.min.js.map" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular.min.js.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -876,7 +883,6 @@
     <Content Include="scripts\i18n\angular-locale_zh.js" />
     <Content Include="scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="scripts\i18n\angular-locale_zu.js" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />

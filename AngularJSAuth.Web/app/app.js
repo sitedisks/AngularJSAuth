@@ -3,8 +3,7 @@
         'ui.bootstrap',
         'ngRoute',
         'LocalStorageModule',
-        'angular-loading-bar',
-        'ngAnimate'
+        'angular-loading-bar'
     ]);
 
 
