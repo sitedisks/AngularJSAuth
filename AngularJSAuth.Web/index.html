@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html data-ng-app="siteApp">
 <head>
     <title>Angular Web</title>
+    <!-- 3rd party libraries -->
     <script type="text/javascript" src="scripts/angular.min.js"></script>
     <script src="scripts/angular-animate.min.js"></script>
     <script src="scripts/angular-route.min.js"></script>
@@ -10,15 +11,62 @@
     <script type="text/javascript" src="scripts/angular-ui/ui-bootstrap.min.js"></script>
 
     <link href="content/yeti/boostrap.min.css" rel="stylesheet" />
+    <link href="content/loading-bar.min.css" rel="stylesheet" />
 </head>
-<body data-ng-app="siteApp">
-    <div class="row">
-        <div class="col-md-4">
-        Alpha
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexCtrl">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{vm.authentication.userName}}</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="#/orders">My Orders</a></li>
+                    <!--<li data-ng-hide="!authentication.isAuth"><a href="#/refresh">Refresh Token</a></li>-->
+                    <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="vm.logOut()">Logout</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header text-center">
+                <h1>AngularJS Authentication</h1>
+            </div>
+            <p>AngularJS Application which uses OAuth Bearer Token for authentication and implements Refresh Tokens. The backend API is built using ASP.NET Web API 2, OWIN middleware, and ASP.NET Identity.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div data-ng-view="">
+        </div>
+    </div>
+
+    <hr />
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-muted">Created by Taiseer Joudeh. Twitter: <a target="_blank" href="http://twitter.com/tjoudeh">@tjoudeh</a></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-muted">Taiseer Joudeh Blog: <a target="_blank" href="http://bitoftech.net">bitoftech.net</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load app main script -->
     <script src="app/app.js"></script>
+    <!-- Load services -->
     <script src="app/services/AuthFactory.js"></script>
     <script src="app/services/authInterceptorSvc.js"></script>
     <script src="app/services/ordersSvc.js"></script>
@@ -27,6 +75,6 @@
     <script src="app/controllers/indexCtrl.js"></script>
     <script src="app/controllers/signupCtrl.js"></script>
     <script src="app/controllers/loginCtrl.js"></script>
-   
+
 </body>
 </html>

@@ -7,18 +7,15 @@
         'ngAnimate'
     ]);
 
-//app.controller('testCtrl', function ($scope) {
-//    $scope.message = 'Love you';
-//});
 
 app.config(function ($routeProvider) {
     $routeProvider.when("/home", {
-        controller: "homeController",
+        controller: "homeCtrl",
         templateUrl: "/app/views/home.html"
     });
 
     $routeProvider.when("/login", {
-        controller: "loginController as vm",
+        controller: "loginCtrl as vm",
         templateUrl: "/app/views/login.html"
     });
 
@@ -28,7 +25,7 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when("/orders", {
-        controller: "ordersController vm",
+        controller: "ordersCtrl as vm",
         templateUrl: "/app/views/orders.html"
     });
 
