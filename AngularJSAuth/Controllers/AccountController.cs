@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace AngularJSAuth.Controllers
 {
+    [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
         private AuthRepository _repo = null;
@@ -29,7 +30,7 @@ namespace AngularJSAuth.Controllers
                 return BadRequest(ModelState);
             }
 
-            IdentityResult result = await _repo.RegisterUser(userModel);
+            IdentityResult result = await _repo.RegisterUser(userModel); // the problem here
 
             IHttpActionResult errorResult = GetErrorResult(result);
 
@@ -79,5 +80,10 @@ namespace AngularJSAuth.Controllers
 
             return null;
         }
+
+        //public IHttpActionResult Get()
+        //{
+        //    return Ok(Order.CreateOrders());
+        //}
     }
 }

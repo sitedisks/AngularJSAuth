@@ -6,7 +6,7 @@
     OrdersSvc.$inject = ['$http'];
 
     function OrdersSvc($http) {
-        var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/';
+        var serviceBase = 'http://localhost:8090/';
         var ordersServiceFactory = {};
 
         var _getOrders = function () {

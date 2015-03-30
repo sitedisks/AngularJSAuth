@@ -6,7 +6,7 @@
     AuthFactory.$inject = ['$http', '$q', 'localStorageService'];
 
     function AuthFactory($http, $q, localStorageService) {
-        var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/'; //host winhost
+        var serviceBase = 'http://localhost:8090/'; //host winhost
         var authServiceFactory = {};
 
         var _authentication = {
@@ -16,7 +16,7 @@
 
         var _saveRegistration = function (registration) {
 
-            _logOut();
+            //_logOut();
 
             return $http.post(serviceBase + 'api/account/register', registration).then(function (response) {
                 return response;
