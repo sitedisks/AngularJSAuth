@@ -9,7 +9,7 @@
 
 app.config(function ($routeProvider) {
     $routeProvider.when("/home", {
-        controller: "homeCtrl",
+        controller: "homeCtrl as vm",
         templateUrl: "/app/views/home.html"
     });
 

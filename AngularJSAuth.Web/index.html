@@ -19,7 +19,7 @@
 </head>
 <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexCtrl">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexCtrl as vm">
         <div class="container">
             <div class="navbar-header">
                 <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
@@ -29,12 +29,13 @@
             </div>
             <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
                 <ul class="nav navbar-nav navbar-right">
-                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{vm.authentication.userName}}</a></li>
-                    <li data-ng-hide="!authentication.isAuth"><a href="#/orders">My Orders</a></li>
+                    
+                    <li data-ng-hide="!vm.authentication.isAuth"><a href="#">Welcome {{vm.authentication.userName}}</a></li>
+                    <li data-ng-hide="!vm.authentication.isAuth"><a href="#/orders">My Orders</a></li>
                     <!--<li data-ng-hide="!authentication.isAuth"><a href="#/refresh">Refresh Token</a></li>-->
-                    <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="vm.logOut()">Logout</a></li>
-                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
-                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                    <li data-ng-hide="!vm.authentication.isAuth"><a href="" data-ng-click="vm.logOut()">Logout</a></li>
+                    <li data-ng-hide="vm.authentication.isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="vm.authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
                 </ul>
             </div>
         </div>
@@ -45,6 +46,7 @@
             <div class="page-header text-center">
                 <h1>AngularJS Authentication</h1>
             </div>
+            <div>{{vm.authentication | json}}</div>
             <p>AngularJS Application which uses OAuth Bearer Token for authentication and implements Refresh Tokens. The backend API is built using ASP.NET Web API 2, OWIN middleware, and ASP.NET Identity.</p>
         </div>
     </div>
