@@ -2,20 +2,23 @@
 <html data-ng-app="siteApp">
 <head>
     <title>Angular Web</title>
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
     <!-- 3rd party libraries -->
     <script type="text/javascript" src="scripts/angular.min.js"></script>
     <!--<script src="scripts/angular-animate.min.js"></script>-->
     <script src="scripts/angular-route.min.js"></script>
     <script src="scripts/localStorageModule/angular-local-storage.min.js"></script>
     <script src="scripts/loading-bar.min.js"></script>
+    
     <script type="text/javascript" src="scripts/angular-ui/ui-bootstrap.min.js"></script>
 
     <script src="scripts/toastr.js"></script>
 
-    <!--<link href="content/yeti/boostrap.min.css" rel="stylesheet" />-->
     <link href="content/bootstrap.min.css" rel="stylesheet" />
     <link href="content/loading-bar.min.css" rel="stylesheet" />
+    <link href="content/font-awesome.min.css" rel="stylesheet" />
     <link href="content/toastr.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 <body>
 
@@ -46,7 +49,6 @@
             <div class="page-header text-center">
                 <h1>AngularJS Authentication</h1>
             </div>
-            <div>{{vm.authentication | json}}</div>
             <p>AngularJS Application which uses OAuth Bearer Token for authentication and implements Refresh Tokens. The backend API is built using ASP.NET Web API 2, OWIN middleware, and ASP.NET Identity.</p>
         </div>
     </div>
