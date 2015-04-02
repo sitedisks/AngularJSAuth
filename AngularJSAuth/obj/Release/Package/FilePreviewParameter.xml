@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="lowata.com.au/WebAPI" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Git\\AngularJSAuth\\AngularJSAuth\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Git\\AngularJSAuth\\AngularJSAuth\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="AuthContext-Web.config Connection String" description="" value="Data Source=tcp:s05.winhost.com;Initial Catalog=DB_77946_tohowdev;Integrated Security=False;User ID=DB_77946_tohowdev_user;Password=qwerty" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Git\\AngularJSAuth\\AngularJSAuth\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AuthContext']/@connectionString" />
+  </parameter>
+</parameters>

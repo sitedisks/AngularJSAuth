@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AuthContext-Web.config Connection String" description="AuthContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:s05.winhost.com;Initial Catalog=DB_77946_tohowdev;User ID=DB_77946_tohowdev_user;Password=qwerty;Integrated Security=False;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Git\\AngularJSAuth\\AngularJSAuth\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AuthContext']/@connectionString" />
+  </parameter>
+</parameters>
