@@ -6,8 +6,8 @@
     AuthFactory.$inject = ['$http', '$q', 'localStorageService'];
 
     function AuthFactory($http, $q, localStorageService) {
-        //var serviceBase = 'http://localhost:8090/'; //host winhost
-        var serviceBase = 'http://www.lowata.com.au/WebAPI/'; // live howto dev
+        var serviceBase = 'http://localhost:8090/'; //host winhost
+        //var serviceBase = 'http://www.lowata.com.au/WebAPI/'; // live howto dev
         var authServiceFactory = {};
 
         var _authentication = {
