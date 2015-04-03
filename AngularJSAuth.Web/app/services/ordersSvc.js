@@ -6,7 +6,8 @@
     OrdersSvc.$inject = ['$http'];
 
     function OrdersSvc($http) {
-        var serviceBase = 'http://localhost:8090/';
+        //var serviceBase = 'http://localhost:8090/';
+        var serviceBase = 'http://www.lowata.com.au/WebAPI/'; // live howto dev
         var ordersServiceFactory = {};
 
         var _getOrders = function () {
