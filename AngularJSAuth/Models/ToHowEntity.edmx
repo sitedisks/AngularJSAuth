@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ToHowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ToHowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbImage">
           <Key>
             <PropertyRef Name="Id" />
@@ -46,6 +46,14 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTemp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Order" Type="int" />
         </EntityType>
         <EntityType Name="tbMetaType">
           <Key>
@@ -194,6 +202,7 @@
           <EntitySet Name="tbImageComment" EntityType="Self.tbImageComment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbImageMeta" EntityType="Self.tbImageMeta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbJobBoard" EntityType="Self.tbJobBoard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTemp" EntityType="Self.tblTemp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbMetaType" EntityType="Self.tbMetaType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProfile" EntityType="Self.tbProfile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbRequest" EntityType="Self.tbRequest" Schema="dbo" store:Type="Tables" />
@@ -235,8 +244,7 @@
             <End Role="tbUserImage" EntitySet="tbUserImage" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ToHowModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -487,7 +495,16 @@
             <End Role="tbProfile" EntitySet="tbProfiles" />
             <End Role="tbUserImage" EntitySet="tbUserImages" />
           </AssociationSet>
+          <EntitySet Name="tblTemps" EntityType="ToHowModel.tblTemp" />
         </EntityContainer>
+        <EntityType Name="tblTemp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Order" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -575,6 +592,15 @@
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="PurchaseDateTime" ColumnName="PurchaseDateTime" />
                 <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTemps">
+            <EntityTypeMapping TypeName="ToHowModel.tblTemp">
+              <MappingFragment StoreEntitySet="tblTemp">
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

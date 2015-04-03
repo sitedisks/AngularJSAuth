@@ -42,6 +42,14 @@
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <EntityType Name="tblTemp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Order" Type="int" />
+  </EntityType>
   <EntityType Name="tbMetaType">
     <Key>
       <PropertyRef Name="Id" />
@@ -189,6 +197,7 @@
     <EntitySet Name="tbImageComment" EntityType="Self.tbImageComment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbImageMeta" EntityType="Self.tbImageMeta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbJobBoard" EntityType="Self.tbJobBoard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTemp" EntityType="Self.tblTemp" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbMetaType" EntityType="Self.tbMetaType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbProfile" EntityType="Self.tbProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbRequest" EntityType="Self.tbRequest" Schema="dbo" store:Type="Tables" />

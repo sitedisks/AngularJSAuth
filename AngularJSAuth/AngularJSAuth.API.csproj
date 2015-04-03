@@ -129,6 +129,7 @@
     <Compile Include="AuthRepository.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\TempController.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\tbImage.cs">
       <DependentUpon>ToHowEntity.tt</DependentUpon>
@@ -140,6 +141,9 @@
       <DependentUpon>ToHowEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbJobBoard.cs">
+      <DependentUpon>ToHowEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblTemp.cs">
       <DependentUpon>ToHowEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbMetaType.cs">

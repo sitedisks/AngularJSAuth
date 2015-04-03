@@ -85,5 +85,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblTemps">
+      <EntityTypeMapping TypeName="ToHowModel.tblTemp">
+        <MappingFragment StoreEntitySet="tblTemp">
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

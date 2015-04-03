@@ -22,6 +22,7 @@
         <AssociationConnector Association="ToHowModel.FK_tbImageMeta_tbImageMeta" ManuallyRouted="false" />
         <AssociationConnector Association="ToHowModel.FK_tbImageMeta_tbMetaType" ManuallyRouted="false" />
         <AssociationConnector Association="ToHowModel.FK_tbUserImage_tbProfile" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ToHowModel.tblTemp" Width="1.5" PointX="9" PointY="1.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

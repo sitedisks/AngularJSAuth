@@ -33,5 +33,6 @@ namespace AngularJSAuth.Models
         public virtual DbSet<tbProfile> tbProfiles { get; set; }
         public virtual DbSet<tbRequest> tbRequests { get; set; }
         public virtual DbSet<tbUserImage> tbUserImages { get; set; }
+        public virtual DbSet<tblTemp> tblTemps { get; set; }
     }
 }
