@@ -7,4 +7,7 @@
   <parameter name="AuthContext-Web.config Connection String" description="" value="Data Source=tcp:s05.winhost.com;Initial Catalog=DB_77946_tohowdev;Integrated Security=False;User ID=DB_77946_tohowdev_user;Password=qwerty" tags="">
     <parameterEntry kind="XmlFile" scope="C:\\Git\\AngularJSAuth\\AngularJSAuth\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AuthContext']/@connectionString" />
   </parameter>
+  <parameter name="ToHowEntities-Web.config Connection String" description="" value="metadata=res://*/Models.ToHowEntity.csdl|res://*/Models.ToHowEntity.ssdl|res://*/Models.ToHowEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=tcp:s05.winhost.com;initial catalog=DB_77946_tohowdev;integrated security=False;user id=DB_77946_tohowdev_user;password=qwerty;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Git\\AngularJSAuth\\AngularJSAuth\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ToHowEntities']/@connectionString" />
+  </parameter>
 </parameters>

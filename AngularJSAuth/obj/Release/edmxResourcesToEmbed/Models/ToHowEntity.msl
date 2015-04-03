@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ToHowModelStoreContainer" CdmEntityContainer="ToHowEntities">
+    <EntitySetMapping Name="tbImages">
+      <EntityTypeMapping TypeName="ToHowModel.tbImage">
+        <MappingFragment StoreEntitySet="tbImage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UploaderUserId" ColumnName="UploaderUserId" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsSold" ColumnName="IsSold" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbImageComments">
+      <EntityTypeMapping TypeName="ToHowModel.tbImageComment">
+        <MappingFragment StoreEntitySet="tbImageComment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ParentCommentId" ColumnName="ParentCommentId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbImageMetas">
+      <EntityTypeMapping TypeName="ToHowModel.tbImageMeta">
+        <MappingFragment StoreEntitySet="tbImageMeta">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="ParentMetaId" ColumnName="ParentMetaId" />
+          <ScalarProperty Name="MetaTypeId" ColumnName="MetaTypeId" />
+          <ScalarProperty Name="MetaValue" ColumnName="MetaValue" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbJobBoards">
+      <EntityTypeMapping TypeName="ToHowModel.tbJobBoard">
+        <MappingFragment StoreEntitySet="tbJobBoard">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMetaTypes">
+      <EntityTypeMapping TypeName="ToHowModel.tbMetaType">
+        <MappingFragment StoreEntitySet="tbMetaType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProfiles">
+      <EntityTypeMapping TypeName="ToHowModel.tbProfile">
+        <MappingFragment StoreEntitySet="tbProfile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRequests">
+      <EntityTypeMapping TypeName="ToHowModel.tbRequest">
+        <MappingFragment StoreEntitySet="tbRequest">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUserImages">
+      <EntityTypeMapping TypeName="ToHowModel.tbUserImage">
+        <MappingFragment StoreEntitySet="tbUserImage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="IsOwner" ColumnName="IsOwner" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PurchaseDateTime" ColumnName="PurchaseDateTime" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTemps">
+      <EntityTypeMapping TypeName="ToHowModel.tblTemp">
+        <MappingFragment StoreEntitySet="tblTemp">
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
