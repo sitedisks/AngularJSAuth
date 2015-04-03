@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ToHowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UploaderUserId" Type="bigint" Nullable="false" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsSold" Type="bit" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="IsPublic" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbImageComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="ImageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ParentCommentId" Type="bigint" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbImageMeta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ParentMetaId" Type="bigint" />
+    <Property Name="MetaTypeId" Type="int" Nullable="false" />
+    <Property Name="MetaValue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbJobBoard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbMetaType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbUserImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProfileId" Type="bigint" Nullable="false" />
+    <Property Name="ImageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsOwner" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="PurchaseDateTime" Type="datetime" Nullable="false" />
+    <Property Name="PurchasePrice" Type="money" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbImage_tbProfile">
+    <End Role="tbProfile" Type="Self.tbProfile" Multiplicity="1" />
+    <End Role="tbImage" Type="Self.tbImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbImage">
+        <PropertyRef Name="UploaderUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbImageComment_tbImage">
+    <End Role="tbImage" Type="Self.tbImage" Multiplicity="1" />
+    <End Role="tbImageComment" Type="Self.tbImageComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbImageComment">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbImageComment_tbImageComment">
+    <End Role="tbImageComment" Type="Self.tbImageComment" Multiplicity="1" />
+    <End Role="tbImageComment1" Type="Self.tbImageComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbImageComment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbImageComment1">
+        <PropertyRef Name="ParentCommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbImageComment_tbProfile">
+    <End Role="tbProfile" Type="Self.tbProfile" Multiplicity="0..1" />
+    <End Role="tbImageComment" Type="Self.tbImageComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbImageComment">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbImageMeta_tbImage">
+    <End Role="tbImage" Type="Self.tbImage" Multiplicity="1" />
+    <End Role="tbImageMeta" Type="Self.tbImageMeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbImageMeta">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbImageMeta_tbImageMeta">
+    <End Role="tbImageMeta" Type="Self.tbImageMeta" Multiplicity="0..1" />
+    <End Role="tbImageMeta1" Type="Self.tbImageMeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbImageMeta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbImageMeta1">
+        <PropertyRef Name="ParentMetaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbImageMeta_tbMetaType">
+    <End Role="tbMetaType" Type="Self.tbMetaType" Multiplicity="1" />
+    <End Role="tbImageMeta" Type="Self.tbImageMeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMetaType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbImageMeta">
+        <PropertyRef Name="MetaTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUserImage_tbImage">
+    <End Role="tbImage" Type="Self.tbImage" Multiplicity="1" />
+    <End Role="tbUserImage" Type="Self.tbUserImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbUserImage">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUserImage_tbProfile">
+    <End Role="tbProfile" Type="Self.tbProfile" Multiplicity="1" />
+    <End Role="tbUserImage" Type="Self.tbUserImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbUserImage">
+        <PropertyRef Name="ProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ToHowModelStoreContainer">
+    <EntitySet Name="tbImage" EntityType="Self.tbImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbImageComment" EntityType="Self.tbImageComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbImageMeta" EntityType="Self.tbImageMeta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbJobBoard" EntityType="Self.tbJobBoard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbMetaType" EntityType="Self.tbMetaType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbProfile" EntityType="Self.tbProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbRequest" EntityType="Self.tbRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUserImage" EntityType="Self.tbUserImage" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbImage_tbProfile" Association="Self.FK_tbImage_tbProfile">
+      <End Role="tbProfile" EntitySet="tbProfile" />
+      <End Role="tbImage" EntitySet="tbImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbImageComment_tbImage" Association="Self.FK_tbImageComment_tbImage">
+      <End Role="tbImage" EntitySet="tbImage" />
+      <End Role="tbImageComment" EntitySet="tbImageComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbImageComment_tbImageComment" Association="Self.FK_tbImageComment_tbImageComment">
+      <End Role="tbImageComment" EntitySet="tbImageComment" />
+      <End Role="tbImageComment1" EntitySet="tbImageComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbImageComment_tbProfile" Association="Self.FK_tbImageComment_tbProfile">
+      <End Role="tbProfile" EntitySet="tbProfile" />
+      <End Role="tbImageComment" EntitySet="tbImageComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbImageMeta_tbImage" Association="Self.FK_tbImageMeta_tbImage">
+      <End Role="tbImage" EntitySet="tbImage" />
+      <End Role="tbImageMeta" EntitySet="tbImageMeta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbImageMeta_tbImageMeta" Association="Self.FK_tbImageMeta_tbImageMeta">
+      <End Role="tbImageMeta" EntitySet="tbImageMeta" />
+      <End Role="tbImageMeta1" EntitySet="tbImageMeta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbImageMeta_tbMetaType" Association="Self.FK_tbImageMeta_tbMetaType">
+      <End Role="tbMetaType" EntitySet="tbMetaType" />
+      <End Role="tbImageMeta" EntitySet="tbImageMeta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUserImage_tbImage" Association="Self.FK_tbUserImage_tbImage">
+      <End Role="tbImage" EntitySet="tbImage" />
+      <End Role="tbUserImage" EntitySet="tbUserImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUserImage_tbProfile" Association="Self.FK_tbUserImage_tbProfile">
+      <End Role="tbProfile" EntitySet="tbProfile" />
+      <End Role="tbUserImage" EntitySet="tbUserImage" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

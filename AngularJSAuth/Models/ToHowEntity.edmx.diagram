@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ecbfd5daeca46658428a1c98fdae8b8" Name="Diagram1">
+        <EntityTypeShape EntityType="ToHowModel.tbImage" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToHowModel.tbImageComment" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToHowModel.tbImageMeta" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToHowModel.tbJobBoard" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToHowModel.tbMetaType" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToHowModel.tbProfile" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToHowModel.tbRequest" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToHowModel.tbUserImage" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="ToHowModel.FK_tbImage_tbProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="ToHowModel.FK_tbImageComment_tbImage" ManuallyRouted="false" />
+        <AssociationConnector Association="ToHowModel.FK_tbImageMeta_tbImage" ManuallyRouted="false" />
+        <AssociationConnector Association="ToHowModel.FK_tbUserImage_tbImage" ManuallyRouted="false" />
+        <AssociationConnector Association="ToHowModel.FK_tbImageComment_tbImageComment" ManuallyRouted="false" />
+        <AssociationConnector Association="ToHowModel.FK_tbImageComment_tbProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="ToHowModel.FK_tbImageMeta_tbImageMeta" ManuallyRouted="false" />
+        <AssociationConnector Association="ToHowModel.FK_tbImageMeta_tbMetaType" ManuallyRouted="false" />
+        <AssociationConnector Association="ToHowModel.FK_tbUserImage_tbProfile" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
