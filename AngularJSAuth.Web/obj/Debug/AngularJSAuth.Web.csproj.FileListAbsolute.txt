@@ -3,4 +3,3 @@ C:\Git\AngularJSAuth\AngularJSAuth.Web\bin\AngularJSAuth.Web.dll
 C:\Git\AngularJSAuth\AngularJSAuth.Web\bin\AngularJSAuth.Web.pdb
 C:\Git\AngularJSAuth\AngularJSAuth.Web\obj\Debug\AngularJSAuth.Web.dll
 C:\Git\AngularJSAuth\AngularJSAuth.Web\obj\Debug\AngularJSAuth.Web.pdb
-C:\Git\AngularJSAuth\AngularJSAuth.Web\obj\Debug\AngularJSAuth.Web.csprojResolveAssemblyReference.cache

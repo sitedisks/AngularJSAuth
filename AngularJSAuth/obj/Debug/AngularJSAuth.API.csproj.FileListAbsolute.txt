@@ -37,4 +37,3 @@ C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Web.Http.Owin.xml
 C:\Git\AngularJSAuth\AngularJSAuth\bin\System.Web.Http.WebHost.xml
 C:\Git\AngularJSAuth\AngularJSAuth\obj\Debug\AngularJSAuth.dll
 C:\Git\AngularJSAuth\AngularJSAuth\obj\Debug\AngularJSAuth.pdb
-C:\Git\AngularJSAuth\AngularJSAuth\obj\Debug\AngularJSAuth.API.csprojResolveAssemblyReference.cache
