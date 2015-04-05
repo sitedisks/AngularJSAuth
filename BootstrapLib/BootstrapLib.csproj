@@ -234,6 +234,7 @@
     <Content Include="submenu3.html" />
     <Content Include="table.html" />
     <Content Include="tasks.html" />
+    <Content Include="tohow.html" />
     <Content Include="typography.html" />
     <Content Include="ui.html" />
     <Content Include="Web.config" />
