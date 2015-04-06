@@ -37,7 +37,7 @@
 <body>
 
     <!-- start: Header -->
-    <div class="navbar">
+    <div class="navbar" data-ng-controller="statusCtrl as vm">
         <div class="navbar-inner">
             <div class="container-fluid">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
@@ -45,12 +45,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="index.html"><span>JANUX</span></a>
+                <a class="brand" href="index.html"><span>ToHow</span></a>
 
                 <!-- start: Header Menu -->
                 <div class="nav-no-collapse header-nav">
                     <ul class="nav pull-right">
-                        <li class="dropdown hidden-phone">
+
+                        <li data-ng-hide="vm.authentication.isAuth"> <a class="btn" href="#/login">Login</a></li>
+                        <li data-ng-hide="vm.authentication.isAuth"> <a class="btn" href="#/signup">Sign Up</a></li>
+
+                        <li data-ng-hide="!vm.authentication.isAuth" class="dropdown hidden-phone">
                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                                 <i class="icon-bell"></i>
                                 <span class="badge red">
@@ -137,72 +141,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <!-- start: Notifications Dropdown -->
-                        <li class="dropdown hidden-phone">
-                            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="icon-calendar"></i>
-                                <span class="badge red">
-                                    5
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu tasks">
-                                <li class="dropdown-menu-title">
-                                    <span>You have 17 tasks in progress</span>
-                                    <a href="#refresh"><i class="icon-repeat"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="header">
-                                            <span class="title">iOS Development</span>
-                                            <span class="percent"></span>
-                                        </span>
-                                        <div class="taskProgress progressSlim red">80</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="header">
-                                            <span class="title">Android Development</span>
-                                            <span class="percent"></span>
-                                        </span>
-                                        <div class="taskProgress progressSlim green">47</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="header">
-                                            <span class="title">ARM Development</span>
-                                            <span class="percent"></span>
-                                        </span>
-                                        <div class="taskProgress progressSlim yellow">32</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="header">
-                                            <span class="title">ARM Development</span>
-                                            <span class="percent"></span>
-                                        </span>
-                                        <div class="taskProgress progressSlim greenLight">63</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="header">
-                                            <span class="title">ARM Development</span>
-                                            <span class="percent"></span>
-                                        </span>
-                                        <div class="taskProgress progressSlim orange">80</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-menu-sub-footer">View all tasks</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- end: Notifications Dropdown -->
-                        <!-- start: Message Dropdown -->
-                        <li class="dropdown hidden-phone">
+                        <li data-ng-hide="!vm.authentication.isAuth" class="dropdown hidden-phone">
                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                                 <i class="icon-envelope"></i>
                                 <span class="badge red">
@@ -299,19 +238,18 @@
                                 </li>
                             </ul>
                         </li>
-
                         <!-- start: User Dropdown -->
-                        <li class="dropdown">
+                        <li data-ng-hide="!vm.authentication.isAuth" class="dropdown">
                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="halflings-icon white user"></i> Dennis Ji
+                                <i class="halflings-icon white user"></i> {{vm.authentication.userName}}
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-menu-title">
                                     <span>Account Settings</span>
                                 </li>
-                                <li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-                                <li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
+                                <li><a href="#/profile"><i class="halflings-icon user"></i> Profile</a></li>
+                                <li><a href="#" data-ng-click="vm.logOut()"><i class="halflings-icon off"></i> Logout</a></li>
                             </ul>
                         </li>
                         <!-- end: User Dropdown -->
@@ -348,6 +286,40 @@
     <div class="container-fluid-full">
         <div class="row-fluid">
 
+            <!-- start: Main Menu -->
+            <div id="sidebar-left" class="span2" data-ng-controller="statusCtrl as vm">
+                <div class="nav-collapse sidebar-nav">
+                    <ul class="nav nav-tabs nav-stacked main-menu">
+                        <li><a href="#/"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Home</span></a></li>
+                        <li data-ng-hide="!vm.authentication.isAuth"><a href="#/orders"><i class="icon-align-justify"></i><span class="hidden-tablet"> My Orders</span></a></li>
+                        <!--<li><a href="messages.html"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>
+                        <li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> Tasks</span></a></li>
+                        <li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
+                        <li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>
+                        <li>
+                            <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>
+                            <ul>
+                                <li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
+                                <li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
+                                <li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
+                        <li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
+                        <li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
+                        <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
+                        <li><a href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
+                        <li><a href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
+                        <li><a href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
+                        <li><a href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>-->
+                        <li><a href="#/about"><i class="icon-lock"></i><span class="hidden-tablet"> About Us</span></a></li>
+                        <li><a href="#/login"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end: Main Menu -->
+
+
             <noscript>
                 <div class="alert alert-block span10">
                     <h4 class="alert-heading">Warning!</h4>
@@ -355,69 +327,83 @@
                 </div>
             </noscript>
 
-            <div data-ng-view=""></div>
+            <!-- start: Content -->
+            <div id="content" class="span10">
+                <div data-ng-view=""></div>
 
-            <!--<div id="content-gallery" class="span12">
-
-                <div class="row-fluid">
+                <!--<div class="row-fluid">
                     <div class=" span12">
                         <div class="box-content">
                             <div class="masonry-gallery">
                                 <div id="image-1" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo1.jpg)" title="Sample Image 1" href="img/gallery/photo1.jpg">
-                                    <img class="grayscale" src="img/gallery/photo1.jpg" alt="Sample Image 1"></a>
+                                        <img class="grayscale" src="img/gallery/photo1.jpg" alt="Sample Image 1">
+                                    </a>
                                 </div>
                                 <div id="image-2" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo2.jpg)" title="Sample Image 2" href="img/gallery/photo2.jpg">
-                                    <img class="grayscale" src="img/gallery/photo2.jpg" alt="Sample Image 2"></a>
+                                        <img class="grayscale" src="img/gallery/photo2.jpg" alt="Sample Image 2">
+                                    </a>
                                 </div>
                                 <div id="image-3" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo3.jpg)" title="Sample Image 3" href="img/gallery/photo3.jpg">
-                                    <img class="grayscale" src="img/gallery/photo3.jpg" alt="Sample Image 3"></a>
+                                        <img class="grayscale" src="img/gallery/photo3.jpg" alt="Sample Image 3">
+                                    </a>
                                 </div>
                                 <div id="image-4" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo4.jpg)" title="Sample Image 4" href="img/gallery/photo4.jpg">
-                                    <img class="grayscale" src="img/gallery/photo4.jpg" alt="Sample Image 4"></a>
+                                        <img class="grayscale" src="img/gallery/photo4.jpg" alt="Sample Image 4">
+                                    </a>
                                 </div>
                                 <div id="image-5" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo5.jpg)" title="Sample Image 5" href="img/gallery/photo5.jpg">
-                                    <img class="grayscale" src="img/gallery/photo5.jpg" alt="Sample Image 5"></a>
+                                        <img class="grayscale" src="img/gallery/photo5.jpg" alt="Sample Image 5">
+                                    </a>
                                 </div>
                                 <div id="image-6" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo6.jpg)" title="Sample Image 6" href="img/gallery/photo6.jpg">
-                                    <img class="grayscale" src="img/gallery/photo6.jpg" alt="Sample Image 6"></a>
+                                        <img class="grayscale" src="img/gallery/photo6.jpg" alt="Sample Image 6">
+                                    </a>
                                 </div>
                                 <div id="image-7" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo7.jpg)" title="Sample Image 7" href="img/gallery/photo7.jpg">
-                                    <img class="grayscale" src="img/gallery/photo7.jpg" alt="Sample Image 7"></a>
+                                        <img class="grayscale" src="img/gallery/photo7.jpg" alt="Sample Image 7">
+                                    </a>
                                 </div>
                                 <div id="image-8" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo8.jpg)" title="Sample Image 8" href="img/gallery/photo8.jpg">
-                                    <img class="grayscale" src="img/gallery/photo8.jpg" alt="Sample Image 8"></a>
+                                        <img class="grayscale" src="img/gallery/photo8.jpg" alt="Sample Image 8">
+                                    </a>
                                 </div>
                                 <div id="image-9" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo9.jpg)" title="Sample Image 9" href="img/gallery/photo9.jpg">
-                                    <img class="grayscale" src="img/gallery/photo9.jpg" alt="Sample Image 9"></a>
+                                        <img class="grayscale" src="img/gallery/photo9.jpg" alt="Sample Image 9">
+                                    </a>
                                 </div>
                                 <div id="image-10" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo10.jpg)" title="Sample Image 10" href="img/gallery/photo10.jpg">
-                                    <img class="grayscale" src="img/gallery/photo10.jpg" alt="Sample Image 10"></a>
+                                        <img class="grayscale" src="img/gallery/photo10.jpg" alt="Sample Image 10">
+                                    </a>
                                 </div>
                                 <div id="image-11" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo11.jpg)" title="Sample Image 11" href="img/gallery/photo11.jpg">
-                                    <img class="grayscale" src="img/gallery/photo11.jpg" alt="Sample Image 11"></a>
+                                        <img class="grayscale" src="img/gallery/photo11.jpg" alt="Sample Image 11">
+                                    </a>
                                 </div>
                                 <div id="image-12" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo12.jpg)" title="Sample Image 12" href="img/gallery/photo12.jpg">
-                                    <img class="grayscale" src="img/gallery/photo12.jpg" alt="Sample Image 12"></a>
+                                        <img class="grayscale" src="img/gallery/photo12.jpg" alt="Sample Image 12">
+                                    </a>
                                 </div>
                                 <div id="image-13" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo13.jpg)" title="Sample Image 13" href="img/gallery/photo13.jpg">
-                                    <img class="grayscale" src="img/gallery/photo13.jpg" alt="Sample Image 13"></a>
+                                        <img class="grayscale" src="img/gallery/photo13.jpg" alt="Sample Image 13">
+                                    </a>
                                 </div>
                                 <div id="image-14" class="masonry-thumb">
                                     <a style="background:url(img/gallery/photo14.jpg)" title="Sample Image 14" href="img/gallery/photo14.jpg">
-                                    <img class="grayscale" src="img/gallery/photo14.jpg" alt="Sample Image 14"></a>
+                                        <img class="grayscale" src="img/gallery/photo14.jpg" alt="Sample Image 14">
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -449,9 +435,11 @@
                     <div class="span2">
                         &nbsp;
                     </div>
-                </div>
+                </div>-->
 
-            </div>-->
+            </div>
+
+       
 
         </div>
     </div>
@@ -514,7 +502,8 @@
     <script src="app/services/ordersSvc.js"></script>
 
     <script src="app/controllers/homeCtrl.js"></script>
-    <script src="app/controllers/indexCtrl.js"></script>
+    <!--<script src="app/controllers/indexCtrl.js"></script>-->
+    <script src="app/controllers/statusCtrl.js"></script>
     <script src="app/controllers/signupCtrl.js"></script>
     <script src="app/controllers/loginCtrl.js"></script>
     <script src="app/controllers/ordersCtrl.js"></script>
