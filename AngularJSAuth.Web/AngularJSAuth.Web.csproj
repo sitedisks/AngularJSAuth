@@ -58,7 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\controllers\homeCtrl.js" />
-    <Content Include="app\controllers\indexCtrl.js" />
+    <Content Include="app\controllers\statusCtrl.js" />
+    <Content Include="app\controllers\sidemenuCtrl.js" />
     <Content Include="app\controllers\loginCtrl.js" />
     <Content Include="app\controllers\ordersCtrl.js" />
     <Content Include="app\controllers\signupCtrl.js" />
@@ -68,6 +69,7 @@
     <Content Include="app\views\home.html" />
     <Content Include="app\views\login.html" />
     <Content Include="app\views\orders.html" />
+    <Content Include="app\views\sideMenu.html" />
     <Content Include="app\views\signup.html" />
     <Content Include="content\bootstrap-responsive.css" />
     <Content Include="content\bootstrap-responsive.min.css" />

@@ -1,11 +1,11 @@
 ﻿(function () {
     'use strict';
 
-    app.controller('indexCtrl', IndexCtrl);
+    app.controller('sidemenuCtrl', SideMenuCtrl);
 
-    IndexCtrl.$inject = ['$location', 'authService'];
+    SideMenuCtrl.$inject = ['$location', 'authService'];
 
-    function IndexCtrl($location, authService) {
+    function SideMenuCtrl($location, authService) {
         /* jshint validthis:true */
         var vm = this;
 

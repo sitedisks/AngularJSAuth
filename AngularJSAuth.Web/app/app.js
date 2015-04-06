@@ -24,6 +24,16 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/signup.html"
     });
 
+    $routeProvider.when("/profile", {
+        controller: "profileCtrl as vm",
+        templateUrl: "/app/views/profile.html"
+    });
+
+    $routeProvider.when("/about", {
+        controller: "aboutCtrl as vm",
+        templateUrl: "/app/views/about.html"
+    });
+
     $routeProvider.when("/orders", {
         controller: "ordersCtrl as vm",
         templateUrl: "/app/views/orders.html"
