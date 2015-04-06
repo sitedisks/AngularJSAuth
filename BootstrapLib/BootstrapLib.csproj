@@ -109,6 +109,7 @@
     <Content Include="font\glyphicons-regular.svg" />
     <Content Include="font\glyphiconshalflings-regular.svg" />
     <Content Include="form.html" />
+    <Content Include="gallery2.html" />
     <Content Include="gallery.html" />
     <Content Include="icon.html" />
     <Content Include="img\arrows-active.png" />
@@ -141,6 +142,8 @@
     <Content Include="img\gallery\photo11.jpg" />
     <Content Include="img\gallery\photo12.jpg" />
     <Content Include="img\gallery\photo13.jpg" />
+    <Content Include="img\gallery\photo14.jpg" />
+    <Content Include="img\gallery\photo15.jpg" />
     <Content Include="img\gallery\photo2.jpg" />
     <Content Include="img\gallery\photo3.jpg" />
     <Content Include="img\gallery\photo4.jpg" />

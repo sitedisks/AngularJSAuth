@@ -3,7 +3,8 @@
         'ui.bootstrap',
         'ngRoute',
         'LocalStorageModule',
-        'angular-loading-bar'
+        'angular-loading-bar',
+        'wu.masonry'
     ]);
 
 

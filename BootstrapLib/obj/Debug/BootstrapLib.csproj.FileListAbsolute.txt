@@ -3,3 +3,4 @@ C:\Git\AngularJSAuth\BootstrapLib\bin\BootstrapLib.dll
 C:\Git\AngularJSAuth\BootstrapLib\bin\BootstrapLib.pdb
 C:\Git\AngularJSAuth\BootstrapLib\obj\Debug\BootstrapLib.dll
 C:\Git\AngularJSAuth\BootstrapLib\obj\Debug\BootstrapLib.pdb
+C:\Git\AngularJSAuth\BootstrapLib\obj\Debug\BootstrapLib.csprojResolveAssemblyReference.cache

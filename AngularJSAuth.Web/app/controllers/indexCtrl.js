@@ -8,6 +8,9 @@
     function IndexCtrl($location, authService) {
         /* jshint validthis:true */
         var vm = this;
+
+
+
         vm.logOut = function () {
             authService.logOut();
             $location.path('/home');
