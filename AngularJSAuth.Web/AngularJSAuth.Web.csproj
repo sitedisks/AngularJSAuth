@@ -57,7 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\controllers\profileCtrl.js" />
     <Content Include="app\controllers\homeCtrl.js" />
+    <Content Include="app\controllers\aboutCtrl.js" />
     <Content Include="app\controllers\statusCtrl.js" />
     <Content Include="app\controllers\sidemenuCtrl.js" />
     <Content Include="app\controllers\loginCtrl.js" />
@@ -66,9 +68,11 @@
     <Content Include="app\services\AuthFactory.js" />
     <Content Include="app\services\authInterceptorSvc.js" />
     <Content Include="app\services\ordersSvc.js" />
+    <Content Include="app\views\about.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\login.html" />
     <Content Include="app\views\orders.html" />
+    <Content Include="app\views\profile.html" />
     <Content Include="app\views\sideMenu.html" />
     <Content Include="app\views\signup.html" />
     <Content Include="content\bootstrap-responsive.css" />
